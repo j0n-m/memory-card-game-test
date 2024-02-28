@@ -12,9 +12,7 @@ export default function MemoryGame({ }) {
   const [isGameOver, setIsGameOver] = useState(false);
   //useEffect with dependencys for score change
   //inside the body - setPokemonList?
-  async function resetGame(amount, e) {
-    e.target.textContent = "Loading...";
-    e.target.disabled = true;
+  async function resetGame(amount) {
     const list = await Pokemons.getPokemons(amount);
     console.log('getting new pokemons', list)
     setPokemonList([...list]);
@@ -23,6 +21,11 @@ export default function MemoryGame({ }) {
     if (score == 8) {
       setBestScore(0)
     }
+  }
+  function handleResetBtnClick(e) {
+    e.target.textContent = "Loading...";
+    e.target.disabled = true;
+    resetGame(8);
   }
   useEffect(() => {
     if (isGameOver) {
@@ -73,7 +76,7 @@ export default function MemoryGame({ }) {
           handleIncrementScore={incrementScore}
         />
       </header>
-      {isGameOver ? <GameOver isGameWon={score == 8} handleClick={() => resetGame(8)}></GameOver> :
+      {isGameOver ? <GameOver isGameWon={score == 8} handleClick={() => handleResetBtnClick(e)}></GameOver> :
         <main>
           {pokemonList.length ? pokemonList.map(pokemon =>
             <button type="button" className="card" key={pokemon.id} name={pokemon.name} onClick={() => incrementScore(pokemon.id)}>
