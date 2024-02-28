@@ -1,0 +1,86 @@
+body {
+  min-height: 100svh;
+  font-family: sans-serif;
+}
+
+header {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+}
+
+header h1 {
+  font-size: 1.3rem;
+  text-align: center;
+  letter-spacing: 2px;
+  flex: 1;
+}
+
+#root {
+  height: 90svh;
+}
+
+main {
+  display: grid;
+  align-content: start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 8px 16px;
+  min-height: 100%;
+  /* min-height: 100svh; */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.card {
+  /* border: 1px solid black; */
+  box-shadow: 0 0 4px gray;
+  padding: 16px;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 6px black;
+}
+
+.card:active {
+  box-shadow: 0 0 10px black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .name {
+  font-size: 1rem;
+  padding-top: 8px;
+  letter-spacing: 2px;
+}
+
+.pokemon-artwork {
+  height: 120px;
+}
+
+
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    margin: 8px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

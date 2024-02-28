@@ -1,0 +1,28 @@
+/* reset style */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+button:not(.retry-btn),
+input[type="button"] {
+  border: none;
+  outline: none;
+  background-color: inherit;
+}

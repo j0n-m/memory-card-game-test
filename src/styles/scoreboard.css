@@ -1,0 +1,7 @@
+.scoreboard {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  gap: 16px;
+}
