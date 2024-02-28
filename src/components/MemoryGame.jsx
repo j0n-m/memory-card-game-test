@@ -76,7 +76,7 @@ export default function MemoryGame({ }) {
           handleIncrementScore={incrementScore}
         />
       </header>
-      {isGameOver ? <GameOver isGameWon={score == 8} handleClick={() => handleResetBtnClick(e)}></GameOver> :
+      {isGameOver ? <GameOver isGameWon={score == 8} handleClick={(e) => handleResetBtnClick(e)}></GameOver> :
         <main>
           {pokemonList.length ? pokemonList.map(pokemon =>
             <button type="button" className="card" key={pokemon.id} name={pokemon.name} onClick={() => incrementScore(pokemon.id)}>
