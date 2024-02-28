@@ -5,10 +5,10 @@ import Pokemons from '../Pokemons';
 import GameOver from './GameOver';
 
 // eslint-disable-next-line react/prop-types
-export default function MemoryGame({ pokemons }) {
+export default function MemoryGame({ }) {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [pokemonList, setPokemonList] = useState(pokemons);
+  const [pokemonList, setPokemonList] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
   //useEffect with dependencys for score change
   //inside the body - setPokemonList?
@@ -28,6 +28,9 @@ export default function MemoryGame({ pokemons }) {
       return;
     }
     console.log('inside effects')
+    if (score == 0 && bestScore == 0) {
+      setPokemonList(resetGame(8))
+    }
     if (score == 0) return;
     if (score == 8) {
       console.log('in  effects looking at score == 8')
