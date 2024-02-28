@@ -5,7 +5,7 @@ import Pokemons from '../Pokemons';
 import GameOver from './GameOver';
 
 // eslint-disable-next-line react/prop-types
-export default function MemoryGame({ }) {
+export default function MemoryGame() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [pokemonList, setPokemonList] = useState([]);
@@ -23,9 +23,10 @@ export default function MemoryGame({ }) {
     }
   }
   function handleResetBtnClick(e) {
-    e.target.textContent = "Loading...";
     e.target.disabled = true;
-    resetGame(8);
+    e.target.textContent = "Loading..."
+    console.log(e.target)
+    resetGame(8)
   }
   useEffect(() => {
     if (isGameOver) {
