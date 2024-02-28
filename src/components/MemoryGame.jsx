@@ -84,7 +84,7 @@ export default function MemoryGame({ }) {
                 </div>
 
               </div>
-            </button>) : <p>No pokemons :(</p>}
+            </button>) : <p>Loading pokemons...</p>}
         </main>}
     </>
   )
