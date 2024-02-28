@@ -12,7 +12,9 @@ export default function MemoryGame({ }) {
   const [isGameOver, setIsGameOver] = useState(false);
   //useEffect with dependencys for score change
   //inside the body - setPokemonList?
-  async function resetGame(amount) {
+  async function resetGame(amount, e) {
+    e.target.textContent = "Loading...";
+    e.target.disabled = true;
     const list = await Pokemons.getPokemons(amount);
     console.log('getting new pokemons', list)
     setPokemonList([...list]);
